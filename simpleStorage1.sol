@@ -35,12 +35,12 @@ contract SimpleStorage {
 
     People public person1 = People({favoriteNumber: 2, name: "Mish"});
 
-    // People[] public people; // dynamic array
+    People[] public people; // dynamic array
 
-    // function addPerson(string memory _name, uint256 _favoriteNumber) public {
-    //     // people.push(People({favoriteNumber: _favoriteNumber, name: _name}));
-    //     people.push(People(_favoriteNumber, _name));
-    // }
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        // people.push(People({favoriteNumber: _favoriteNumber, name: _name}));
+        people.push(People(_favoriteNumber, _name));
+    }
 
 }
 
