@@ -37,11 +37,15 @@ contract SimpleStorage {
 
     People[] public people; // dynamic array
 
+    mapping(string => uint256) public nameToFavoriteNumber;
+    mapping(uint256 => string) public favoriteNumbertoName;
+
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         // people.push(People({favoriteNumber: _favoriteNumber, name: _name}));
         people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
+        favoriteNumbertoName[_favoriteNumber] = _name;
     }
-
 }
 
 // view keyword is used to check/see the state of the (blockchain) function or variable without changing them.
